@@ -53,6 +53,8 @@ Définition des éléments de menu pour la navigation
 */
 const menuItems = [
   { title: 'Accueil', path: '/', icon: 'mdi-pokeball' },
+  { title: 'Favoris', path: '/favoris', icon: 'mdi-heart' },
+  { title: 'À propos', path: '/a-propos', icon: 'mdi-information' },
   // Ajouter ici les autres liens du menu.
   // Vous trouverez des icônes sur https://pictogrammers.com/library/mdi/
   // N'oubliez pas d'ajouter le préfixe 'mdi-' devant le nom de l'icône.
