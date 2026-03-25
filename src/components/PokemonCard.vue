@@ -1,5 +1,8 @@
 <template>
-  <v-card hover>
+  <v-card
+    :to="`/pokemon/${pokemon.id}`"
+    hover
+  >
     <v-img
       :src="getImageUrl(pokemon.img)"
       :alt="pokemon.name"
