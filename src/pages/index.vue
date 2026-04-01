@@ -1,8 +1,6 @@
 <template>
   <v-container>
-    <h1 class="text-h3 text-center my-6">
-      Pokédex
-    </h1>
+    <h1 class="text-h3 text-center my-6">Pokédex</h1>
 
     <v-row>
       <v-col
@@ -20,12 +18,15 @@
 </template>
 
 <script setup>
+// Import du store et de storeToRefs
+import { usePokemonStore } from '@/stores/pokemonStore'
+import { storeToRefs } from 'pinia'
 import PokemonCard from '@/components/PokemonCard.vue'
 
-const pokemons = ref([])
+// Instancier le store
+const pokemonStore = usePokemonStore()
 
-onMounted(async () => {
-  const response = await fetch('http://localhost:3535/pokemons')
-  pokemons.value = await response.json()
-})
+// Destructurer le state en gardant la réactivité
+// storeToRefs convertit chaque propriété du state en ref
+const { pokemons } = storeToRefs(pokemonStore)
 </script>

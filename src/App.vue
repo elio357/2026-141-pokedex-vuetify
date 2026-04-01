@@ -9,6 +9,18 @@
 </template>
 
 <script setup>
+// Imports des composants de layout
 import AppHeader from '@/components/AppHeader.vue'
 import AppFooter from '@/components/AppFooter.vue'
+
+// Import du store Pokémon
+import { usePokemonStore } from '@/stores/pokemonStore'
+
+// Initialisation du store au montage de l'application
+// onMounted est auto-importé grâce à unplugin-auto-import
+onMounted(async () => {
+  const pokemonStore = usePokemonStore()
+  // init() charge les Pokémon et les types en parallèle
+  await pokemonStore.init()
+})
 </script>
